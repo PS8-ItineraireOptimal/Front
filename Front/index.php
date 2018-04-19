@@ -12,10 +12,14 @@
     <style>
         #headline{
             color:white;
+            background-image:url(index.jpg);
+            background-color: rgba(0, 0, 0, 0.1);
+        }
+        body{
             background-color:white;
             background-image:url(index.jpg);
         }
-            footer {
+        footer {
             position: fixed;
             left: 0;
             bottom: 0;
@@ -58,7 +62,7 @@
       </nav>
     </header>
     <div class="position-relative overflow-hidden p-5 text-center bg-light" id="headline">
-        <div class=" p-lg-5 mx-auto my-5">
+        <div class=" p-lg-3 mx-auto my-5">
             <h1 class="display-3 font-weight-normal">Find your electric journey</h1>
             <div class="container-fluid">
                 <form>     
@@ -114,10 +118,14 @@
                             </div>
                         </div>
                     <br>
-                        <input type="submit" class="btn btn-primary mb-2" id="submit" value="Search">
+                        <input type="submit" class="btn btn-success mb-2" id="submit" value="Search">
                     </div>
                     <div class="center-block">
-                        
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <p class="copyright">© 2018 Benoit Mangeard - Jixiong Liu - Charles Mailly - Yves William OBAME EDOU - Yuang Xuan</p>
                     </div>
                 </form>
             </div>
@@ -125,9 +133,6 @@
     </div>
     <div id="map"></div>
   </body>
-  <footer class="text-center position-fixed-bottom">
-    <p class="copyright">© 2018 Benoit Mangeard - Jixiong Liu - Charles Mailly - Yves William OBAME EDOU - Yuang Xuan</p>
-  </footer>
   <script>
 
       var geocoder;
