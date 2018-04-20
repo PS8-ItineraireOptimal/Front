@@ -3,6 +3,7 @@
   <head>
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
     <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge, chrome=1"/>
     <title>TrajElec</title>
     <!-- Chargement de la librairie font-awesome -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -65,8 +66,12 @@
         <div class=" p-lg-3 mx-auto my-5">
             <h1 class="display-3 font-weight-normal">Find your electric journey</h1>
             <div class="container-fluid">
-                <form>     
+                <form action="result.php" method="post">     
                     <br>
+                    <input id="ilat" name="ilat" type="hidden"/>
+                    <input id="ilng" name="ilng" type="hidden"/>
+                    <input id="jlat" name="jlat" type="hidden"/>
+                    <input id="jlng" name="jlng" type="hidden"/>
                     <div class="center-block">
                     <label class="font-weight-bold">Choose your electic vehicle:</label>
                     </div>
@@ -79,11 +84,11 @@
                             $result = $mysqli->query($query);      
                         ?>
                         <div>
-                            <select class="custom-select" id="VE">
+                            <select name="VE" class="custom-select" id="VE">
                                 <?php
                                     while($row = mysqli_fetch_assoc($result)){
                                 ?>
-                                    <option><?php echo $row["Marque"]. " " .$row["Modele"];?></option>
+                                    <option><?php echo $row["Modele"];?></option>
                                 <?php
                                     }
                                     $mysqli->close();
@@ -134,7 +139,8 @@
     <div id="map"></div>
   </body>
   <script>
-
+    
+      var i, j ,ilat, ilng, jlat, jlng;
       var geocoder;
       var map;
       var path = null, timer = 0, index = 0, markerShow = null;
@@ -159,9 +165,23 @@
 
             var startAutocomplete = new google.maps.places.Autocomplete(inputStart);
             startAutocomplete.bindTo('bounds', map);
+            google.maps.event.addListener(startAutocomplete, 'place_changed', function () {
+                i = startAutocomplete.getPlace();
+                ilat = i.geometry.location.lat();
+                ilng = i.geometry.location.lng();   
+                document.getElementById("ilat").value = ilat;
+                document.getElementById("ilng").value = ilng; 
+            });
 
             var endAutocomplete = new google.maps.places.Autocomplete(inputEnd);
             endAutocomplete.bindTo('bounds', map);
+            google.maps.event.addListener(endAutocomplete, 'place_changed', function () {
+                j = endAutocomplete.getPlace();
+                jlat = j.geometry.location.lat();
+                jlng = j.geometry.location.lng(); 
+                document.getElementById("jlat").value = jlat;
+                document.getElementById("jlng").value = jlng; 
+            });
         }
     
         //Script for the display of range power in battery 
@@ -171,7 +191,9 @@
         document.registrationForm.endEnergyIn.oninput = function(){
         document.registrationForm.endEnergyOut.value = document.registrationForm.endEnergyIn.value;
         }
+
     </script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBzE9xAESye6Kde-3hT-6B90nfwUkcS8Yw&libraries=places&callback=initMap&language=fr"
         async defer></script>
 </html>
+

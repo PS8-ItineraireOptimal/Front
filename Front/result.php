@@ -1,7 +1,5 @@
 <?php
   include "main.php";
-  $waypoints = get_waypoints();
-  $stats = get_stats();
 ?>
 
 <!DOCTYPE html>
