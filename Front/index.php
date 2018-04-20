@@ -101,17 +101,17 @@
                         <label class="font-weight-bold">Starting energy:</label>
                     </div>
                     <div class="center-block">
-                        <input type="range" name="endEnergyInName" id="endEnergyIn" value="100" min="1" max="100" oninput="endEnergyOut.value = endEnergyIn.value">
-                        <output name="endEnergyOutName" id="endEnergyOut">100</output>
-                    <div>
+                        <input type="range" name="startEnergyInName" id="startEnergyIn" value="100" min="1" max="100" oninput="startEnergyOut.value = startEnergyIn.value">
+                        <output name="startEnergyOutName" id="startEnergyOut">100</output>
+                    </div>
                     <div class="center-block">
                     <br>
                         <label class="font-weight-bold">Remaining energy at destination:</label>
                     </div>
                     <div class="center-block">
-                        <input type="range" name="startEnergyInName" id="startEnergyIn" value="24" min="1" max="100" oninput="startEnergyOut.value = startEnergyIn.value">
-                        <output name="startEnergyOutName" id="startEnergyOut">24</output>
-                    </div>
+                        <input type="range" name="endEnergyInName" id="endEnergyIn" value="20" min="1" max="100" oninput="endEnergyOut.value = endEnergyIn.value">
+                        <output name="endEnergyOutName" id="endEnergyOut">20</output>
+                    <div>
                     <br>
                     <div class="center-block">
                         <div class="form-row">
