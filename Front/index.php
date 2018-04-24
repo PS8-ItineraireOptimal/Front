@@ -140,7 +140,7 @@
   </body>
   <script>
     
-      var i, j ,ilat, ilng, jlat, jlng；
+      var i, j ,ilat, ilng, jlat, jlng;
       var geocoder;
       var map;
       var path = null, timer = 0, index = 0, markerShow = null;
