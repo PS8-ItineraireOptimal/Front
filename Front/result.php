@@ -1,5 +1,5 @@
 <?php
-  include "../../Path_Server/main.php";
+  include "../Path_Server/main.php";
 ?>
 
 <!DOCTYPE html>
@@ -14,6 +14,19 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css">
 
     <style>
+        #right-panel {
+        font-family: 'Roboto','sans-serif';
+        line-height: 30px;
+        padding-left: 10px;
+        margin: 20px;
+        border-width: 2px;
+        width: 25%;
+        height: 400px;
+        float: left;
+        text-align: left;
+        padding-top: 0;
+        }
+
         footer {
             position: fixed;
             left: 0;
@@ -28,23 +41,31 @@
         margin: 0;
         padding: 0;
       }
+
       #map {
-        height: 60%;
-        width: 100%;
+        height: 80%;
+        float: left;
+        width: 70%;
       }
     </style>
   </head>
   <body>
 
       <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-        <a class="navbar-brand lead" href="index.php">TrajElec</a>
+        <a class="navbar-brand lead" href="index.php">E-wayz</a>
       </nav>
 
     <div class="mt-5" id="map"></div>
     <br>
     <br>
-    <div class="container text-center">
+    <div class="container text-center" id="right-panel">
         <ul class="list-group">
+          <li class="list-group-item d-flex justify-content-between align-items-center">
+            From:
+            <span class="badge badge-info badge-pill"> <?php echo $_POST["start"]?> </span>
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+            To:
+            <span class="badge badge-info badge-pill"> <?php echo $_POST["end"]?> </span>
           <li class="list-group-item d-flex justify-content-between align-items-center">
             Time (h)
             <span class="badge badge-success badge-pill"> <?php echo $stats["time"]?> </span>
@@ -61,11 +82,10 @@
         <br>
         <a class="btn btn-success btn-md" href="index.php" role="button">New search &raquo;</a>
       </div>
-      <div class="center-block text-center">
-        <br>
+      <footer>
         <br>
         <p class="copyright">© 2018 Benoit Mangeard - Jixiong Liu - Charles Mailly - Yves William OBAME EDOU - Yuang Xuan</p>
-      </div>
+      </footer>
   </body>
 
     <script>

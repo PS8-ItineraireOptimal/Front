@@ -4,7 +4,7 @@
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge, chrome=1"/>
-    <title>TrajElec</title>
+    <title>E-wayz</title>
     <!-- Chargement de la librairie font-awesome -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- Chargement de la feuille de style adaptative Bootrap -->
@@ -59,7 +59,7 @@
 
     <header>
       <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-        <a class="navbar-brand lead" href="index.php">TrajElec</a>
+        <a class="navbar-brand lead" href="index.php">E-wayz</a>
       </nav>
     </header>
     <div class="position-relative overflow-hidden p-5 text-center bg-light" id="headline">
@@ -116,10 +116,10 @@
                     <div class="center-block">
                         <div class="form-row">
                             <div class="col">
-                                <input class="form-control" id="start" type="text" placeholder="From">   
+                                <input class="form-control" id="start" name="start" type="text" placeholder="From">   
                             </div>
                             <div class="col">
-                                <input class="form-control" id="end" type="text" placeholder="To">
+                                <input class="form-control" id="end" name="end" type="text" placeholder="To">
                             </div>
                         </div>
                     <br>
@@ -140,7 +140,7 @@
   </body>
   <script>
     
-      var i, j ,ilat, ilng, jlat, jlng;
+      var i, j ,ilat, ilng, jlat, jlng；
       var geocoder;
       var map;
       var path = null, timer = 0, index = 0, markerShow = null;
@@ -170,7 +170,7 @@
                 ilat = i.geometry.location.lat();
                 ilng = i.geometry.location.lng();   
                 document.getElementById("ilat").value = ilat;
-                document.getElementById("ilng").value = ilng; 
+                document.getElementById("ilng").value = ilng;
             });
 
             var endAutocomplete = new google.maps.places.Autocomplete(inputEnd);
