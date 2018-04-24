@@ -4,7 +4,7 @@
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge, chrome=1"/>
-    <title>E-wayz</title>
+    <title>Home</title>
     <!-- Chargement de la librairie font-awesome -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- Chargement de la feuille de style adaptative Bootrap -->
@@ -116,13 +116,15 @@
                     <div class="center-block">
                         <div class="form-row">
                             <div class="col">
-                                <input class="form-control" id="start" name="start" type="text" placeholder="From">   
+                                <input class="form-control" id="start" type="text" placeholder="From">   
                             </div>
                             <div class="col">
-                                <input class="form-control" id="end" name="end" type="text" placeholder="To">
+                                <input class="form-control" id="end" type="text" placeholder="To">
                             </div>
                         </div>
                     <br>
+                    <input id="startAd" name="startAd" type="hidden"/>
+                    <input id="endAd" name="endAd" type="hidden"/>
                         <input type="submit" class="btn btn-success mb-2" id="submit" value="Search">
                     </div>
                     <div class="center-block">
@@ -167,18 +169,22 @@
             startAutocomplete.bindTo('bounds', map);
             google.maps.event.addListener(startAutocomplete, 'place_changed', function () {
                 i = startAutocomplete.getPlace();
+                startAd = i.formatted_address;
                 ilat = i.geometry.location.lat();
-                ilng = i.geometry.location.lng();   
+                ilng = i.geometry.location.lng();  
+                document.getElementById("startAd").value = startAd; 
                 document.getElementById("ilat").value = ilat;
-                document.getElementById("ilng").value = ilng;
+                document.getElementById("ilng").value = ilng; 
             });
 
             var endAutocomplete = new google.maps.places.Autocomplete(inputEnd);
             endAutocomplete.bindTo('bounds', map);
             google.maps.event.addListener(endAutocomplete, 'place_changed', function () {
-                j = endAutocomplete.getPlace();
+                j = endAutocomplete.getPlace(); 
+                endAd = j.formatted_address;
                 jlat = j.geometry.location.lat();
                 jlng = j.geometry.location.lng(); 
+                document.getElementById("endAd").value = endAd;
                 document.getElementById("jlat").value = jlat;
                 document.getElementById("jlng").value = jlng; 
             });

@@ -1,5 +1,5 @@
 <?php
-  include "../Path_Server/main.php";
+  include "../../Path_Server/main.php";
 ?>
 
 <!DOCTYPE html>
@@ -7,7 +7,7 @@
   <head>
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
     <meta charset="utf-8">
-    <title>Waypoints in directions</title>
+    <title>Maps</title>
     <!-- Chargement de la librairie font-awesome -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- Chargement de la feuille de style adaptative Bootrap -->
@@ -62,10 +62,10 @@
         <ul class="list-group">
           <li class="list-group-item d-flex justify-content-between align-items-center">
             From:
-            <span class="badge badge-info badge-pill"> <?php echo $_POST["start"]?> </span>
-            <li class="list-group-item d-flex justify-content-between align-items-center">
+            <span class="badge badge-light badge-pill"> <?php echo $_POST["startAd"]?> </span>
+          <li class="list-group-item d-flex justify-content-between align-items-center">
             To:
-            <span class="badge badge-info badge-pill"> <?php echo $_POST["end"]?> </span>
+            <span class="badge badge-light badge-pill"> <?php echo $_POST["endAd"]?> </span>
           <li class="list-group-item d-flex justify-content-between align-items-center">
             Time (h)
             <span class="badge badge-success badge-pill"> <?php echo $stats["time"]?> </span>
@@ -75,7 +75,7 @@
             <span class="badge badge-success badge-pill"> <?php echo $stats["distance"] ?>  </span>
           </li>
           <li class="list-group-item d-flex justify-content-between align-items-center">
-            Energy (kWh)
+            Remaining energy (%)
             <span class="badge badge-success badge-pill"> <?php echo $stats["energy"] ?> </span>
           </li>
         </ul>
