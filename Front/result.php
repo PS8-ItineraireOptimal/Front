@@ -1,5 +1,5 @@
 <?php
-  include "../Path_Server/main.php";
+  include "../../Path_Server/main.php";
 ?>
 
 <!DOCTYPE html>
