@@ -78,7 +78,7 @@
                     <div class="center-block">
                         <?php
                             //Vérification de la date limite
-                            include "bdd.php";
+                            include "../Path_Server/bdd.php";
                             $mysqli = get_bdd();
                             $query = "SELECT * FROM car";
                             $result = $mysqli->query($query);      
